@@ -1,0 +1,173 @@
+
+    /* Paleta inspirada en marca: blanco dominante, acentos negro/grafito */
+       :root{
+      --cooper-bg: #ffffff;
+      --cooper-text: #111111;   /* casi negro para mejor lectura */
+      --cooper-line: #e6e6e6;   /* separadores suaves */
+      --cooper-accent: #000000; /* acento negro */
+       --cooper-cyan: #48A6C5;
+      --cooper-cyan-600: #2E7F98;
+      --cooper-cyan-100: #E8F6FA;
+      --cooper-ink: #111111;
+      --cooper-white: #ffffff;
+      --cooper-line: #DCE6EA;
+      --cooper-copper: #B65A2A; 
+    }
+
+    html, body { background: var(--cooper-bg); color: var(--cooper-text); }
+
+    /* Navbar blanca con borde inferior sutil */
+    .navbar {
+      background: var(--cooper-bg);
+      border-bottom: 1px solid var(--cooper-line);
+    }
+
+    /* Botones en negro para contraste */
+    .btn {
+  position: relative;
+  overflow: hidden; /* para el shine */
+  transition:
+    background-color .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    box-shadow .2s ease,
+    transform .12s ease;
+}
+
+/* Primario: relleno cyan */
+.btn-primary{
+  background: var(--cooper-cyan);
+  border-color: var(--cooper-cyan);
+  color:#fff;
+}
+.btn-primary:hover,
+.btn-primary:focus{
+  background: #29c4f3;
+  border-color: #29c4f3;
+  box-shadow: 0 8px 16px rgba(72,166,197,.22);
+  transform: translateY(-1px);
+}
+.btn-primary:active{
+  background: var(--cooper-cyan-600);
+  border-color: var(--cooper-cyan-600);
+  box-shadow: 0 4px 10px rgba(72,166,197,.18);
+  transform: translateY(0);
+}
+
+/* Outline: borde cyan, fondo claro al hover */
+.btn-outline-dark{
+  background: transparent;
+  color: var(--cooper-cyan);
+  border-color: var(--cooper-cyan);
+}
+.btn-outline-dark:hover,
+.btn-outline-dark:focus{
+  background: #29c4f331;
+  color: var(--cooper-cyan-600);
+  border-color: var(--cooper-cyan-600);
+  box-shadow: 0 8px 16px rgba(72,166,197,.18);
+  transform: translateY(-1px);
+}
+.btn-outline-dark:active{
+  background: #29c4f3;
+  color:#fff;
+  border-color: #29c4f3;
+  box-shadow: 0 4px 10px rgba(72,166,197,.18);
+  transform: translateY(0);
+}
+
+/* Foco accesible para teclado */
+.btn:focus-visible{
+  outline: 0;
+  box-shadow:
+    0 0 0 .2rem rgba(72,166,197,.25),
+    0 10px 18px rgba(72,166,197,.20);
+}
+
+/* Shine sutil al pasar el mouse */
+.btn::after{
+  content:"";
+  position:absolute;
+  top:0; left:-150%;
+  width:50%; height:100%;
+  transform: skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+  transition: left .45s ease;
+  pointer-events: none;
+}
+.btn:hover::after{ left:150%; }
+
+/* Estados deshabilitado */
+.btn:disabled, .btn.disabled{
+  opacity:.6;
+  box-shadow:none;
+  transform:none;
+}
+    /* Offcanvas claro con hover suave */
+    .offcanvas { background: var(--cooper-bg); }
+    .list-group-item {
+      border: 0;
+      color: var(--cooper-text);
+    }
+    .list-group-item:hover {
+      background: #f7f7f7;
+    }
+
+    /* Tarjetas blancas con borde fino */
+    .card {
+      background: var(--cooper-bg);
+      border: 1px solid var(--cooper-line);
+      color: var(--cooper-text);
+    }
+
+    /* Enlaces en negro que aclaran al hover */
+    a { color: var(--cooper-text); }
+    a:hover { opacity: .7; }
+
+    /* Espaciado top para navbar fija */
+    main { padding-top: 72px; }
+
+    /* Logo responsivo (colocá tu PNG/SVG exportado del PDF) */
+    .brand-logo { height: 48px; }
+    @media (min-width: 576px) {
+      .brand-logo { height: 53px; }
+    }
+
+    .w80{
+      width: 80%;
+    }
+
+    .h80{
+      height: 90%;
+    }
+
+    .whatsapp-float {
+      text-decoration: none !important;
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 9999;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .logo-footer{
+      width: 200px;
+      height: auto;
+    }

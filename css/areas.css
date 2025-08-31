@@ -1,0 +1,69 @@
+.cuadrado{
+    background: transparent;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.imag {
+    border-radius: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  transition: background-size 0.3s ease;
+  transition: 30ms;
+  background-color: transparent;
+}
+
+
+.imag::before {
+    inset: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(121,188,210, 0.5);
+  z-index: 1;
+  transition: background 0.3s ease;
+  transition: 30ms;
+}
+
+
+.texto {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 2rem;
+  user-select: none;
+}
+
+
+.imag:hover {
+  transform: scale(1.05);
+}
+
+.box{
+  transition: 100ms; 
+}
+.box:hover {
+  background-size: 110%;
+  transform: scale(1.05);
+  transition: 100ms;
+}
+
+.imag:hover::before {
+  background: rgba(50,100,120, 0.6);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .imag, .imag::before { transition: none; }
+}
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,0 +1,46 @@
+/* ===== Contacto Pro ===== */
+:root{
+  --cooper-muted: #8A949C; /* por si no lo tenías definido */
+}
+
+.contact-card{
+  border: 1px solid var(--cooper-line);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(17,17,17,.05);
+}
+
+/* Lateral con tono cyan muy claro */
+.contact-side{
+  border: 1px solid var(--cooper-line);
+  border-radius: 14px;
+  background: var(--cooper-cyan-100);
+}
+
+/* Form controls alineados a la paleta */
+.form-control{
+  border: 1px solid var(--cooper-line);
+  background: #fff;
+}
+.form-control:focus{
+  border-color: var(--cooper-cyan);
+  box-shadow: 0 0 0 .2rem rgba(72,166,197,.25);
+}
+
+/* Labels flotantes más sobrios */
+.form-floating > label{
+  color: var(--cooper-muted);
+}
+
+/* Tipografía y detalles */
+.letter-wide{ letter-spacing: .12em; }
+
+/* Acción full-width en mobile; más compacto en desktop */
+.contact-actions .btn{
+  padding-block: .9rem;
+}
+
+/* Micro-animación al pasar por inputs */
+.form-control{
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}

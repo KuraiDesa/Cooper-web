@@ -1,0 +1,97 @@
+/* ==== Hero Video ==== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Mobile: full-bleed + botones lado a lado */
+@media (max-width: 991.98px) {
+  /* el video ocupa toda la pantalla de lado a lado */
+  #inicio .video-wrapper {
+    border-radius: 0;
+    margin-left: calc(50% - 50vw); /* full-bleed dentro de container */
+    width: 100vw;
+    box-shadow: none;               /* limpio en mobile */
+  }
+  #inicio .video-wrapper video {
+    width: 100vw;
+    height: 70vh;                   /* altura protagonista */
+    object-fit: cover;
+  }
+
+
+  /* ocultar texto en mobile */
+  #inicio .d-lg-block { display: none !important; }
+
+  /* botones bien alineados, lado a lado */
+  #inicio .btn-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: stretch;
+    padding: 14px 0 4px;
+  }
+  #inicio .btn-row .btn {
+    flex: 1 1 0;         /* lado a lado, mismo ancho */
+    min-width: 0;
+    padding: 12px 0;     /* alto consistente */
+    font-weight: 600;
+  }
+}
+
+/* ===== Brand block para mobile ===== */
+.brand-hero{
+  text-align: center;
+  padding: 12px 8px 0;
+  animation: riseFade .5s ease both;
+}
+.brand-title{
+  /* tamaño fluido: min 28px, máx 40px */
+  font-size: clamp(28px, 5.5vw, 40px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: var(--cooper-ink);
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+.brand-title::after{
+  content:"";
+  display:block;
+  width: 64px;
+  height: 4px;
+  margin: 10px auto 0;
+  background: var(--cooper-cyan);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(72,166,197,.35);
+}
+.brand-subtitle{
+  margin: 6px 0 0;
+  font-size: clamp(11px, 2.8vw, 14px);
+  letter-spacing: .25em;
+  color: var(--cooper-cyan-600);
+  font-weight: 600;
+}
+
+/* animación sutil */
+@keyframes riseFade{
+  from{ opacity:0; transform: translateY(6px); }
+  to  { opacity:1; transform: translateY(0); }
+}
+
+@media (max-width: 991.98px){
+  #inicio .btn-row{ margin-top: 8px; }
+  .esp{
+    margin-top:0 !important;
+    }
+}
